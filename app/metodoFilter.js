@@ -6,4 +6,5 @@ function filtrarLivros() {
     const categoria = elementoBtn.value
     let livrosFiltrados = categoria == 'disponivel' ? livros.filter(livro => livro.quantidade > 0) : livros.filter(livro => livro.categoria == categoria)
     exibirOsLivrosNaTela(livrosFiltrados)
+    
 }
