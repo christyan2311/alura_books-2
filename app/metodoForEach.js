@@ -1,9 +1,11 @@
 const elementoParaInserirLivros = document.getElementById('livros')
+const elementoComValorTotalDeLivrosDisponiveis = document.getElementById('valor_total_livros_disponiveis')
 
 function exibirOsLivrosNaTela(listaDeLivros) {
+    elementoComValorTotalDeLivrosDisponiveis.innerHTML = ''
     elementoParaInserirLivros.innerHTML = ''
     listaDeLivros.forEach(livro => {
-        // Verifica se o livro está disponível ou não
+        // let disponibilidade = verificarDisponibilidadeDoLivro(livro)
         let disponibilidade = livro.quantidade > 0 ? 'livro__imagens' : 'livro__imagens indisponivel' 
         elementoParaInserirLivros.innerHTML += `
         <div class="livro">
@@ -22,3 +24,10 @@ function exibirOsLivrosNaTela(listaDeLivros) {
     })
 }
 
+// function verificarDisponibilidadeDoLivro(livro) {
+//   if (livro.quantidade > 0 ){
+//     return 'livro__imagens'
+//   } else {
+//     return 'livros__imagens indisponivel'
+//   }
+// }
